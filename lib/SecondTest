@@ -1,0 +1,51 @@
+import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+
+class testSecond extends StatefulWidget {
+  const testSecond({Key? key}) : super(key: key);
+
+  @override
+  State<testSecond> createState() => _testSecondState();
+}
+
+class _testSecondState extends State<testSecond> {
+
+  TextEditingController controller1 = TextEditingController();
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+     body: Column(
+      children: [
+
+        InkWell(
+          onTap: (){
+            setState(() {
+            });
+            if(controller1.text.isEmpty){
+              Fluttertoast.showToast(
+                  msg: "Enter name",
+                  //android time
+                  toastLength: Toast.LENGTH_LONG,
+                  //screen place
+                  gravity: ToastGravity.CENTER,
+                  timeInSecForIosWeb: 1,
+                  backgroundColor: Colors.red,
+                  textColor: Colors.white,
+                  fontSize: 16.0
+              );
+            }else{
+
+            };
+          },
+          child: TextField(controller: controller1, decoration: InputDecoration(hintText:'name',),),,
+        ),
+
+        ElevatedButton(onPressed: ,
+            child: Text("add"),
+        ),
+      ],
+    ),
+
+    );
+  }
+}
